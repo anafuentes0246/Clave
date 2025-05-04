@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Desbloquea el Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+    }
+    #video-section {
+      display: none;
+      margin-top: 30px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔐 Ingresa la contraseña secreta</h1>
+  <p>¿Serás capaz de descubrirla?</p>
+  <input type="password" id="passwordInput" placeholder="Contraseña">
+  <button onclick="checkPassword()">Desbloquear</button>
+
+  <div id="video-section">
+    <h2>🎉 ¡Correcto! Aquí está tu recompensa:</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/wjM8Eqzqksc" 
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    const correctPassword = "1234";
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      if (input === correctPassword) {
+        document.getElementById("video-section").style.display = "block";
+      } else {
+        alert("❌ Contraseña incorrecta. ¡Sigue intentando!");
+      }
+    }
+  </script>
